@@ -6,22 +6,31 @@ const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget
 {
-  const GradientContainer({super.key});
+  const GradientContainer(this.color1,this.color2,{super.key});
+  final Color color1;
+  final Color color2;
+
+  void rollDice(){
+
+  }
+
   @override
   Widget build(context){
   return  Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 60, 12, 105),
-                Color.fromARGB(255, 29, 56, 175)
-              ],
+              colors: [color1,color2],
               begin: startAlignment,
               end: endAlignment,
             ),
           ),
-          child: const Center(
-            child: StyledText('Hello World') 
+          child: Center(
+            child: Image.asset('assets/images/dice-2.png', width: 200)
           ),
+          TextButton(
+            onPressed: rollDice,
+            child: const Text('Roll Dice'),
+
+          )
         );
         }}
