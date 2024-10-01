@@ -25,12 +25,18 @@ class GradientContainer extends StatelessWidget
             ),
           ),
           child: Center(
-            child: Image.asset('assets/images/dice-2.png', width: 200)
+          child: Column(children: [
+                     child: Image.asset('assets/images/dice-2.png', width: 200)
           ),
           TextButton(
             onPressed: rollDice,
             child: const Text('Roll Dice'),
 
+          ),
+
+
           )
-        );
+          ],
+          
+                  ),
         }}
